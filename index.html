@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicky Kumar - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/db137759e8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div id="Header">
+    <div class="navbar container">
+      <nav>
+        <p class="logo">Vicky</p>
+        <ul>
+          <li><a href="#Header">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Services">Service</a></li>
+           <li><a href="#Achievements">Achievements</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <div class="header-text">
+        <p>Full-Stack Developer</p>
+        <h1>Hi, I'm <span>Vicky Kumar</span><br> From Bihar</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div id="About">
+    <div class="container">
+      <div class="about-content">
+        <div class="img-sec">
+          <img src="images/vicky.png" alt="vicky">
+        </div>
+        <div class="about-heading">
+          <h1 class="About-header">About Me</h1>
+          <p>I am a Computer Science student specializing in AI & ML at Dev Bhoomi Uttarakhand University.
+            Passionate about building scalable full-stack applications, I enjoy solving problems in Data Structures &
+            Algorithms, and developing projects in Django, Python, and JavaScript.
+            With experience in web/app development, I focus on creating responsive, user-friendly, and secure
+            applications.
+          </p>
+
+          <div class="about-titles">
+            <p class="tab-link active-link" onclick="opentab('Skills')">Skills</p>
+            <p class="tab-link" onclick="opentab('Experience')">Experience</p>
+            <p class="tab-link" onclick="opentab('education')">Education</p>
+          </div>
+
+          <div class="tab-content active-tab" id="Skills">
+            <ul>
+              <li><span>Languages:</span> C++, Python, C, JavaScript, SQL (MySQL), HTML5</li>
+              <li><span>Frameworks & Libraries:</span> Django, CSS, Tailwind CSS, Bootstrap</li>
+              <li><span>Developer Tools:</span> VS Code, Git, GitHub</li>
+              <li><span>Coursework:</span> Data Structures & Algorithms, OOP, DBMS, Computer Architecture, Operating
+                Systems, Web Development</li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="Experience">
+            <ul>
+              <li><span>Jun 2025 – Present</span><br>Full-Stack Developer Intern at Eduveera (Remote)</li>
+              <li>Built core features using Django, Tailwind CSS, Gmail API automation, and Agile collaboration.</li>
+            </ul>
+          </div>
+
+          <div class="tab-content" id="education">
+            <ul>
+              <li><span>2023 – 2027</span><br>B.Tech in Computer Science (AI & ML), Dev Bhoomi Uttarakhand University,
+                SGPA: 7.81</li>
+              <li><span>2020 – 2022</span><br>Senior Secondary (XII), Science, L.P. Shahi College, 70.2%</li>
+              <li><span>2020</span><br>10th, Destiny International School</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div id="Services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
+      <div class="service-list">
+        <div>
+          <i class="fa-solid fa-code" style="color: #FFD43B;"></i>
+          <h2>Web Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam similique provident placeat eos
+            ducimus ea odit quas harum saepe.</p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-mobile" style="color: #FFD43B;"></i>
+          <h2>App Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam similique provident placeat eos
+            ducimus ea odit quas harum saepe.</p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-laptop-code" style="color: #FFD43B;"></i>
+          <h2>Software Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam similique provident placeat eos
+            ducimus ea odit quas harum saepe.</p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio / Work Section -->
+  <div class="protfolio">
+    <div class="container">
+      <h1 class="sub-title">My Work</h1>
+      <!-- 🔹 CHANGE HERE -->
+      <div class="work-list">
+        <div class="work">
+          <img src="images/vicky.png">
+          <div class="layer">
+            <h3>Eduveera</h3>
+            <p>Education consulting platform with Django backend, Tailwind frontend, and Gmail API automation.</p>
+            <a href="https://github.com/eduveera/django_web_dev/tree/vicky"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+
+        <div class="work">
+          <img src="images/vicky.png">
+          <div class="layer">
+            <h3>DataYatra</h3>
+            <p>Interactive SQL & Python learning platform with real-time execution and progress tracking.</p>
+            <a href="https://datayatra.in"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+
+        <div class="work">
+          <img src="images/vicky.png">
+          <div class="layer">
+            <h3>Social Media App</h3>
+            <p>A personal project that connects users and allows posting on social media.</p>
+            <a href="#"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">See More</a>
+    </div>
+  </div>
+
+<!-- Achievements Section -->
+<div id="Achievements">
+  <div class="container">
+    <h1 class="sub-title">Achievements</h1>
+    <ul class="achievements-list">
+      <li>Solved <b>400+ coding problems</b> across CodeChef, LeetCode, and GeeksforGeeks.</li>
+      <li>CodeChef Rating: <b>1044 (1★)</b> — handle: vicky9110</li>
+      <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+      <li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>
+      <li>Microsoft Certified: Azure AI Fundamentals (AI-900)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="Contact">
+  <div class="container">
+    <div class="row">
+      <!-- Left Column -->
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-envelope"></i> vickykumar23499@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> 9110958980</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/vickykumar001"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/vicky91-01"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.codechef.com/users/vicky9110"><i class="fa-solid fa-code"></i></a>
+        </div>
+        <a href="images/Vicky_Kumar_Resume.pdf" download class="btn btn2"> Download Resume </a>
+      </div>
+
+      <!-- Right Column -->
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="Submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg" style="display: none;">Succesfully submit</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>Copyright © vicky kumar</p>
+  </div>
+</div>
+
+
+  <!-- Tabs Script -->
+  <script>
+    const scriptURL = "YOUR_GOOGLE_SHEET_SCRIPT_URL";
+    const form = document.forms["submit-to-google-sheet"];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      msg.style.display = "block";    // show msg area
+      msg.textContent = "Sending..."; // temporary text
+
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then(response => {
+          msg.textContent = "✅ Message sent successfully!";
+          form.reset();
+          setTimeout(() => {
+            msg.style.display = "none"; // hide after 3s
+          }, 3000);
+        })
+        .catch(error => {
+          msg.textContent = "❌ Something went wrong!";
+          console.error("Error!", error.message);
+        });
+    });
+  </script>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-link");
+    var tabcontents = document.getElementsByClassName("tab-content");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</body>
+
+</html>
