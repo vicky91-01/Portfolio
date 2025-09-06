@@ -44,3 +44,27 @@ const navMenu = document.querySelector("nav ul");
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
+
+  const cards = document.querySelectorAll(".project-card");
+
+  cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // Mouse X inside card
+      const y = e.clientY - rect.top;  // Mouse Y inside card
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate rotation (adjust multiplier for effect strength)
+      const rotateX = ((y - centerY) / centerY) * 10; 
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      card.style.transform = `rotateX(${ -rotateX }deg) rotateY(${ rotateY }deg) scale(1.05)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+    });
+  });
+
+

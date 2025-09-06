@@ -19,6 +19,7 @@
           <li><a href="#Header">Home</a></li>
           <li><a href="#About">About</a></li>
           <li><a href="#Services">Services</a></li>
+          <li><a href="#portfolio">portfolio</a></li>
           <li><a href="#Achievements">Achievements</a></li>
           <li><a href="#Contact">Contact</a></li>
         </ul>
@@ -90,10 +91,15 @@
     <!-- GitHub Contributions -->
     <div class="about-card full-width">
       <h2>GitHub Contributions</h2>
-      <p>📊 889 contributions in the last year</p>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=yourusername&theme=radical" alt="GitHub Streak">
-    </div>
+  <p>📊 My recent activity</p>
 
+  <!-- GitHub Streak -->
+  <img src="https://streak-stats.demolab.com?user=vicky91-01&theme=radical&hide_border=true" alt="GitHub Streak"> 
+<!-- GitHub Contribution Snake -->
+<!-- <img src="https://raw.githubusercontent.com/vicky91-01/vicky91-01/output/github-snake.svg" alt="GitHub Contribution Snake"> -->
+
+<img src="https://raw.githubusercontent.com/vicky91-01/vicky91-01/output/github-snake-dark.svg" alt="GitHub Contribution Snake">
+</div>
     <!-- Technical Skills -->
     <div class="about-card full-width">
       <h2>Technical Skills</h2>
@@ -150,41 +156,77 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="portfolio">
-    <div class="container">
-      <h1 class="sub-title">My Work</h1>
-      <div class="work-list">
+<section id="portfolio">
+  <div class="container">
+    <h2 class="section-title">✨ My Projects</h2>
+    <p class="section-subtitle">Here are some of my recent projects.</p>
 
-        <div class="work">
-          <img src="images/vicky.png" alt="Eduveera Project">
-          <div class="layer">
-            <h3>Eduveera</h3>
-            <p>Education consulting platform with Django backend, Tailwind frontend, and Gmail API automation.</p>
-            <a href="https://github.com/eduveera/django_web_dev/tree/vicky"><i class="fa-solid fa-link"></i></a>
-          </div>
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- Project 1 -->
+      <div class="project-card"
+           data-image="images/eduveera.jpg"
+           data-date="Dec 2024 – Feb 2025"
+           data-title="Eduveera"
+           data-subtitle="Education-consulting platform"
+           data-overview="Education-consulting platform with Django backend, Tailwind CSS frontend, Gmail API automation, and a polished Jazzmin admin dashboard."
+           data-tech="Django,Tailwind CSS,Gmail API,HTML,CSS,JS"
+           data-features="Responsive UI|Admin Dashboard|Gmail API automation"
+           data-code="https://github.com/eduveera/django_web_dev/tree/vicky"
+           data-demo="#"
+           data-discuss="#">
+
+        <div class="card-image">
+          <img src="images/eduveera.jpg" alt="Eduveera">
+          <span class="project-date">Dec 2024 – Feb 2025</span>
         </div>
-
-        <div class="work">
-          <img src="images/vicky.png" alt="DataYatra Project">
-          <div class="layer">
-            <h3>DataYatra</h3>
-            <p>Interactive SQL & Python learning platform with real-time execution and progress tracking.</p>
-            <a href="https://datayatra.in"><i class="fa-solid fa-link"></i></a>
+        <div class="card-content">
+          <h3>Eduveera</h3>
+          <p>Education-consulting platform with Django backend, Tailwind CSS frontend, Gmail API automation, and a polished Jazzmin admin dashboard.</p>
+          <div class="tags">
+            <span>Django</span>
+            <span>Tailwind CSS</span>
+            <span>Gmail API</span>
+            <span>HTML/CSS/JS</span>
           </div>
-        </div>
-
-        <div class="work">
-          <img src="images/vicky.png" alt="Social Media Project">
-          <div class="layer">
-            <h3>Social Media App</h3>
-            <p>A personal project that connects users and allows posting on social media.</p>
-            <a href="#"><i class="fa-solid fa-link"></i></a>
-          </div>
+          <a class="btn modal-btn">View Project</a>
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="project-card"
+           data-image="images/datayatra.jpg"
+           data-date="Mar 2025 – Present"
+           data-title="DataYatra"
+           data-subtitle="Interactive SQL & Python learning platform"
+           data-overview="Interactive SQL & Python learning platform with real-time code execution, feedback, progress tracking, and leaderboards for interview prep."
+           data-tech="Django,Python,JavaScript,SQL"
+           data-features="Real-time code execution|Progress tracking|Leaderboards"
+           data-code="https://github.com/vicky91-01"
+           data-demo="https://datayatra.in"
+           data-discuss="#">
+
+        <div class="card-image">
+          <img src="images/datayatra.jpg" alt="DataYatra">
+          <span class="project-date">Mar 2025 – Present</span>
+        </div>
+        <div class="card-content">
+          <h3>DataYatra</h3>
+          <p>Interactive SQL & Python learning platform with real-time code execution, feedback, progress tracking, and leaderboards for interview prep.</p>
+          <div class="tags">
+            <span>Django</span>
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>SQL</span>
+          </div>
+          <a class="btn modal-btn">View Project</a>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Achievements -->
   <section id="Achievements">
