@@ -520,24 +520,77 @@ nav ul li a:hover::after {
    ======================== */
 #Achievements {
   padding: 80px 0;
-  color: #ababab;
+  color: #fff;
+  background: #0f0a1e; /* dark theme */
+  text-align: center;
 }
-.achievements-list {
-  margin-top: 30px;
-  list-style: none;
+
+.sub-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
 }
-.achievements-list li {
-  margin: 15px 0;
-  font-size: 1.2rem;
-  padding-left: 30px;
-  position: relative;
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
 }
-.achievements-list li::before {
-  content: "🏆";
+
+.achievement-card {
+  background: #1a1333;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative; /* for banner */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: inherit;
+  text-decoration: none; /* so links don’t underline */
+  display: block;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 🔹 Banner (Year + Category) */
+.achievement-banner {
   position: absolute;
-  left: 0;
-  color: #ff004f;
+  top: 15px;
+  left: 15px;
+  background: #ff004f;
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  border-radius: 10px;
 }
+
+/* 🔹 Image */
+.achievement-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #fff; /* clean background behind badge */
+  padding: 10px;
+}
+
+.achievement-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.achievement-card p {
+  font-size: 1rem;
+  color: #ababab;
+  line-height: 1.6;
+}
+
 
 /* ========================
    Contact
