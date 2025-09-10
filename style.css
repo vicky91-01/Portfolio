@@ -679,75 +679,159 @@ nav ul li a:hover::after {
 /* ========================
    Contact
    ======================== */
+/* Contact Section */
+#Contact {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+  padding: 70px 20px;
+  border-radius: 12px;
+}
+
 #Contact .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  align-items: flex-start;
 }
+
 .contact-left {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
 }
+
 .contact-right {
-  flex: 1.5;
-  min-width: 300px;
+  flex: 1.3;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
+
+/* Heading */
+.sub-title {
+  font-size: 34px;
+  font-weight: 700;
+  position: relative;
+}
+.sub-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #ff004f;
+  bottom: -10px;
+  left: 0;
+}
+
+/* Contact Info Lines */
 .contact-left p {
-  margin-top: 20px;
+  margin: 12px 0;
+  font-size: 16px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .contact-left p i {
   color: #ff004f;
-  margin-right: 10px;
-  font-size: 22px;
+  font-size: 20px;
+  min-width: 22px;
 }
+
+/* Social Icons */
 .social-icons {
   margin-top: 25px;
 }
 .social-icons a {
-  font-size: 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #262626;
+  font-size: 22px;
   margin-right: 12px;
   color: #ababab;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 .social-icons a:hover {
-  color: #ff004f;
-  transform: translateY(-5px);
-}
-.btn.btn2 {
   background: #ff004f;
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Buttons */
+.btn.btn2 {
+  display: inline-block;
+  margin-top: 20px;
+  background: #ff004f;
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,0,79,0.6);
+  transition: all 0.3s ease;
+}
+.btn.btn2:hover {
+  box-shadow: 0 0 20px rgba(255,0,79,0.9);
+  transform: scale(1.05);
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #262626;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.input-group i {
+  margin-right: 10px;
+  color: #ff004f;
 }
 .contact-right form input,
 .contact-right textarea {
   width: 100%;
   border: none;
   outline: none;
-  background: #262626;
-  padding: 14px;
-  margin: 12px 0;
+  background: transparent;
   color: #fff;
-  border-radius: 6px;
-  transition: box-shadow 0.3s ease;
+  font-size: 15px;
+  resize: none;
 }
-.contact-right form input:focus,
-.contact-right textarea:focus {
-  box-shadow: 0 0 8px #ff004f;
+
+/* Success Message */
+#msg {
+  display: block;
+  margin-top: 12px;
+  color: #0f0;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
-form .btn.btn2 {
-  padding: 14px 50px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+#msg.show {
+  opacity: 1;
 }
-form .btn.btn2:hover {
-  transform: translateY(-3px);
-}
+
+/* Footer */
 .copyright {
   text-align: center;
-  padding: 20px;
+  padding: 18px;
   background: #262626;
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
 }
+
+
+
+
 
 /* ========================
    Responsive
