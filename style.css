@@ -25,30 +25,74 @@ body {
 /* ========================
    Header
    ======================== */
+/* HEADER */
+/* Remove background image from header */
 #Header {
   height: 100vh;
   width: 100%;
-  background: url("images/vicky-modified.png") no-repeat right 80px top 120px;
-  background-size: 400px auto;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(10, 10, 30, 0.8));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.navbar {
-  padding-top: 10px;
+/* Profile image floating */
+.profile-img {
+  position: absolute;
+  right: 80px;
+  top: 120px;
+  animation: float 4s ease-in-out infinite;
 }
+.profile-img img {
+  width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 0, 79, 0.6);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+
+/* NAVBAR */
+.navbar {
+  padding: 15px 60px;  /* more space left & right */
+}
+/* NAVBAR */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.6);  /* semi-transparent bg */
+  backdrop-filter: blur(6px);       /* glass effect */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+/* LOGO */
 .logo {
-  font-size: 1.8rem;
+  margin-left: 65px;
+  font-size: 2rem;
   font-weight: bold;
   color: #ff004f;
+  cursor: pointer;
+  transition: 0.3s;
 }
+.logo:hover {
+  text-shadow: 0 0 10px #ff004f, 0 0 20px #ff004f;
+}
+
+/* NAV LINKS */
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 nav ul li {
   list-style: none;
@@ -56,19 +100,23 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
+  padding: 6px 0;
 }
+
+/* Underline animation */
 nav ul li a::after {
   content: '';
-  width: 0;
-  height: 3px;
-  background: #ff004f;
   position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ff004f;
   left: 0;
-  bottom: -6px;
-  transition: width 0.4s ease;
+  bottom: -4px;
+  transition: width 0.3s ease;
 }
 nav ul li a:hover {
   color: #ff004f;
@@ -76,8 +124,40 @@ nav ul li a:hover {
 nav ul li a:hover::after {
   width: 100%;
 }
+/* Typing Effect */
+.typing-text {
+  font-size: 24px;
+  color: #ff004f;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ff004f;
+  width: 0;
+  animation: typing 3s steps(20) forwards, blink 0.7s infinite;
+  margin-bottom: 10px;
+}
+
+/* Location Line */
+.location {
+  font-size: 22px;
+  font-weight: 400;
+  color: #ddd;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 3.5s; /* starts after typing finishes */
+}
+
+/* Typing keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; } /* enough space for "Full-Stack Developer" */
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 
 
+/* MENU TOGGLE (mobile only) */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -85,18 +165,82 @@ nav ul li a:hover::after {
   cursor: pointer;
 }
 
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* hidden by default */
+  }
+
+  nav ul.show {
+    display: flex;
+    animation: slideIn 0.3s ease forwards;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Mobile nav animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* HEADER TEXT */
 .header-text {
   margin-top: 15%;
-  font-size: 28px;
+  margin-left: 60px;   /* space from left */
+  font-size: 26px;
   animation: fadeInUp 1.2s ease-in-out;
+}
+.header-text p {
+  font-size: 24px;
+  color: #ff004f;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: px solid #ff004f;
+  width: 0;
+  animation: typing 3s steps(20) forwards, blink 0.7s infinite;
 }
 .header-text h1 {
   font-size: 60px;
-  margin-top: 10px;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards 1.5s;
 }
 .header-text h1 span {
   color: #ff004f;
 }
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; } /* Adjust based on text length */
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
 
 /* ========================
    About Section
