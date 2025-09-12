@@ -9,13 +9,21 @@
 html {
   scroll-behavior: smooth;
 }
+/* Single Global Background */
 body {
-  background: linear-gradient(135deg, #1C052E, #2A0B3C);
+background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
   color: #fff;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
+  background-attachment: fixed; /* keeps it fixed while scrolling */
 }
+
+/* Remove background from sections */
+#Header, #About, #Services, #portfolio, #Achievements, #Contact {
+  background: transparent;
+}
+
 
 /* Container */
 .container {
@@ -25,12 +33,11 @@ body {
 /* ========================
    Header
    ======================== */
-/* HEADER */
+
 /* Remove background image from header */
 #Header {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(10, 10, 30, 0.8));
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -124,17 +131,39 @@ nav ul li a:hover {
 nav ul li a:hover::after {
   width: 100%;
 }
-/* Typing Effect */
 .typing-text {
-  font-size: 24px;
-  color: #ff004f;
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #ff004f;
+  border-right: 3px solid #333;
   width: 0;
-  animation: typing 3s steps(20) forwards, blink 0.7s infinite;
-  margin-bottom: 10px;
+  animation: typing 3s steps(20) forwards, blink 0.7s infinite step-end alternate;
 }
+
+.after-text {
+  opacity: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  display: inline-block;
+  animation: appear 0.5s forwards;
+  animation-delay: 3s; /* shows after typing finishes */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes appear {
+  to { opacity: 1; }
+}
+
 
 /* Location Line */
 .location {
@@ -147,14 +176,7 @@ nav ul li a:hover::after {
   animation-delay: 3.5s; /* starts after typing finishes */
 }
 
-/* Typing keyframes */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 18ch; } /* enough space for "Full-Stack Developer" */
-}
-@keyframes blink {
-  50% { border-color: transparent; }
-}
+
 
 
 /* MENU TOGGLE (mobile only) */
@@ -235,7 +257,7 @@ nav ul li a:hover::after {
 }
 @keyframes typing {
   from { width: 0; }
-  to { width: 20ch; } /* Adjust based on text length */
+  to { width: 18ch; } /* Adjust based on text length */
 }
 @keyframes blink {
   50% { border-color: transparent; }
@@ -248,7 +270,7 @@ nav ul li a:hover::after {
 
 #About {
   padding: 80px 10%;
-  background: #0f0a1f;
+ 
   color: #eee;
   text-align: center;
 }
@@ -286,10 +308,16 @@ nav ul li a:hover::after {
   background: #1a1033;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  margin-bottom: 20px;
-  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  display: flex;               /* make it flex */
+  flex-direction: column;      /* keep content stacked */
+  justify-content: space-between; /* spread text evenly */
+  height: 100%;                /* take full available height */
 }
+.about-grid, .about-side {
+  align-items: stretch;  /* force children to equal height */
+}
+
 .about-card h2, .about-card h3 {
   color: #6c63ff;
 }
@@ -299,6 +327,24 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* Resume Button */
+.resume-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #6c63ff, #00c6ff);
+  color: #fff;
+  margin-top: 15px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.resume-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
 /* Full-width cards (GitHub & Skills) */
@@ -344,7 +390,7 @@ nav ul li a:hover::after {
 
 /* Services Section */
 #Services {
-  background: linear-gradient(145deg, #0f0a1e, #1f1f3a);
+ 
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -468,7 +514,7 @@ nav ul li a:hover::after {
    ======================== */
 
 #portfolio {
-  background: #0f0a1e;
+  
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -749,7 +795,7 @@ nav ul li a:hover::after {
 #Achievements {
   padding: 80px 0;
   color: #fff;
-  background: #0f0a1e; /* dark theme */
+ 
   text-align: center;
 }
 
@@ -825,7 +871,7 @@ nav ul li a:hover::after {
    ======================== */
 /* Contact Section */
 #Contact {
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  
   color: #fff;
   padding: 70px 20px;
   border-radius: 12px;
@@ -1029,4 +1075,32 @@ nav ul li a:hover::after {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+/* ========================
+   Fix for clickable "View Project" buttons
+   ======================== */
+
+/* Ensure buttons are above the glowing pseudo-element */
+.card-content .btn {
+  position: relative;  /* bring it above pseudo-elements */
+  z-index: 10;         /* higher stacking */
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4ac8, #a64aff);
+  color: #fff;
+  padding: 10px 18px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-content .btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff4ac8;
+}
+
+/* Allow clicks to pass through glowing border */
+.project-card::before {
+  pointer-events: none;
 }
