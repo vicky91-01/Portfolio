@@ -1,0 +1,27 @@
+# OS
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Node / Python / env
+node_modules/
+env/
+venv/
+__pycache__/
+
+# Editor/workspace
+.vscode/
+.idea/
+
+# OneDrive / temp
+*.tmp
+*.log
+
+# Sensitive
+.env
+/.env.local
+.env.*
+
+# Build
+dist/
+build/
